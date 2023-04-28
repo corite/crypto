@@ -15,8 +15,8 @@ class Main : Action {
         showOaep()
     }
 
-    fun showRsaPart1() {
-        println(":::AES PART I:::")
+    private fun showRsaPart1() {
+        println(":::RSA PART I:::")
         val rsa = RivestShamirAdleman()
         val p = BigInteger("6791")
         val q = BigInteger("15679")
@@ -25,8 +25,8 @@ class Main : Action {
 
     }
 
-    fun showRsaPart2() {
-        println("\n:::AES PART II:::")
+    private fun showRsaPart2() {
+        println("\n:::RSA PART II:::")
         val rsa = RivestShamirAdleman()
         //using BigInteger in order to be able to use (almost) arbitrary length numbers
         val p = rsa.getPrime(1024)
@@ -36,7 +36,7 @@ class Main : Action {
 
     }
 
-    fun showDiffOfSquares() {
+    private fun showDiffOfSquares() {
         println("\n:::Difference of Squares:::")
 
         val p = BigInteger.valueOf(20353)
@@ -49,7 +49,7 @@ class Main : Action {
 
     }
 
-    fun showOaep() {
+    private fun showOaep() {
         println("\n:::OAEP:::")
 
         val oaep = OptimalAsymmetricEncryptionPadding()
@@ -71,7 +71,7 @@ class Main : Action {
         println("un-transformed message= '${m.toString(Charset.defaultCharset())}'")
     }
 
-    fun showEncAndDec(p: BigInteger, q: BigInteger, e: BigInteger, d: BigInteger) {
+    private fun showEncAndDec(p: BigInteger, q: BigInteger, e: BigInteger, d: BigInteger) {
         val rsa = RivestShamirAdleman()
         val n = p * q
         println("p= $p")
